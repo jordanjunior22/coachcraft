@@ -1,9 +1,22 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* app/globals.css */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cc-primary: #0E4C50;
+  --cc-secondary: #D6A79D;
+  --cc-bg: #ffffff;
+  --cc-text: #2D2D2D;
 }
+
+body {
+  background-color: var(--cc-bg);
+  color: var(--cc-text);
+  font-family: 'Inter', sans-serif;
+}
+
 
 @theme inline {
   --color-background: var(--background);
@@ -19,8 +32,17 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply
+      bg-[var(--cc-primary)]
+      hover:bg-[var(--cc-secondary)]
+      text-white
+      px-6
+      py-3
+      rounded-md
+      font-semibold
+      transition
+      cursor-pointer;
+  }
 }
