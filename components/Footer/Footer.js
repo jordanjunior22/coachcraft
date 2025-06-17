@@ -82,7 +82,7 @@ function Footer() {
                     <div>
                         <h3 className="font-semibold text-base sm:text-lg mb-4">Follow Us</h3>
                         <div className="flex gap-4">
-                            <a href="#" aria-label="Facebook">
+                            <a href="https://www.facebook.com/profile.php?id=61577259818715" aria-label="Facebook">
                                 <Facebook className="hover:text-[var(--cc-secondary)]" />
                             </a>
                             <a href="#" aria-label="Instagram">
