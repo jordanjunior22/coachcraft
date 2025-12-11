@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 
 const siteUrl = "https://coachcraft.space";
-
+const blogPosts = [
+  "improve-coaching-website",
+  "seo-strategies-for-coaches",
+  "effective-coaching-sessions",
+  "attract-ideal-clients",
+  "personal-development-for-coaches",
+  "time-management-for-coaches",
+  "building-trust-with-clients",
+  "coaching-exercises-engagement",
+];
 const staticPaths = [
   "",
   "about-us",
@@ -9,9 +18,7 @@ const staticPaths = [
   "contact",
   "appointment",
   "blog",
-  "improve-coaching-website",
-  "seo-strategies-for-coaches",
-  // Add more blog post slugs here
+  ...blogPosts,
 ];
 
 function generateSiteMap() {
