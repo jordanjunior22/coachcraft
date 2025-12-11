@@ -23,15 +23,13 @@ const staticPaths = [
 
 function generateSiteMap() {
   const urls = staticPaths
-    .map((path) => {
-      return `
-      <url>
+    .map(
+      (path) => `<url>
         <loc>${siteUrl}/${path}</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-      </url>
-    `;
-    })
+      </url>`
+    )
     .join("");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -42,10 +40,7 @@ function generateSiteMap() {
 
 export async function GET() {
   const sitemap = generateSiteMap();
-
   return new NextResponse(sitemap, {
-    headers: {
-      "Content-Type": "application/xml",
-    },
+    headers: { "Content-Type": "application/xml" },
   });
 }
