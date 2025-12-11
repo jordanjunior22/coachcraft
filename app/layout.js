@@ -13,6 +13,9 @@ const roboto = Roboto({
 
 // ------------- METADATA -------------
 export const metadata = {
+    icons: {
+    icon: "/favicon.ico", // or .png
+  },
   metadataBase: new URL("https://coachcraft.space"),
   title: {
     default: "CoachCraft | Custom Coaching Websites That Convert | Web Design for Coaches",
