@@ -8,27 +8,27 @@ const features = [
   {
     title: "Responsive Website",
     description:
-      "A website that looks perfect and works flawlessly on all devices—mobile, tablet, and desktop.",
+      "A fully responsive website that looks perfect on mobile, tablet, and desktop—so your coaching clients always have a seamless experience.",
   },
   {
     title: "Booking Integration",
     description:
-      "Seamlessly connect your scheduling system to let clients book appointments directly on your site.",
+      "Easily connect your scheduling system to allow clients to book sessions directly on your site, saving you time and streamlining your workflow.",
   },
   {
     title: "Copy Guidance",
     description:
-      "Expert advice and templates to craft compelling copy that converts visitors into clients.",
+      "Receive expert copywriting tips and templates that highlight your coaching expertise and turn visitors into paying clients.",
   },
   {
     title: "Brand Feel Setup",
     description:
-      "Custom design that reflects your unique brand style and creates an emotional connection with your audience.",
+      "Custom design tailored to your unique coaching brand, creating an emotional connection with your audience and reinforcing your authority.",
   },
   {
     title: "1:1 Strategy Call",
     description:
-      "Personalized consultation to align your website goals with your business vision and marketing plan.",
+      "A personalized consultation to align your website, marketing, and business goals—ensuring your online presence drives results.",
   },
 ];
 
@@ -55,6 +55,7 @@ const itemVariants = {
 export default function WhatYouGet() {
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      {/* Section Title */}
       <motion.h1
         className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--cc-primary)] mb-10 sm:mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -65,6 +66,7 @@ export default function WhatYouGet() {
         What You Get
       </motion.h1>
 
+      {/* Features Grid */}
       <motion.ul
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
         variants={containerVariants}

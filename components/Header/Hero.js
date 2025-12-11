@@ -15,36 +15,39 @@ export default function HeroSection() {
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black opacity-85 z-0"></div>
+      <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl flex flex-col items-center text-center">
+
+        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-heading text-2xl sm:text-3xl md:text-5xl mb-3 leading-snug sm:leading-snug md:leading-tight drop-shadow-md"
+          className="font-heading text-2xl sm:text-3xl md:text-5xl mb-3 leading-snug md:leading-tight drop-shadow-md"
         >
-          Helping Coaches Launch Beautiful,{" "}
+          Custom Coaching Websites Built to{" "}
           <span className="text-[var(--cc-secondary)] underline">
-            Client-Getting Websites
+            Attract & Convert Clients
           </span>
         </motion.h1>
 
+        {/* Subtext */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           className="mb-4 px-1 text-sm sm:text-base md:text-lg leading-relaxed"
         >
-          Your coaching business deserves a website that not only looks amazing
-          but also converts visitors into paying clients. We specialize in
-          building customized, easy-to-manage websites designed to showcase your
-          unique coaching style and attract your ideal audience. Whether you’re
-          just starting out or ready to scale, we’re here to create a powerful
-          online presence that grows your client base and your impact.
+          Your website should do more than look good — it should consistently
+          bring you clients. At CoachCraft, we design high-conversion coaching
+          websites that elevate your authority, showcase your expertise, and make
+          booking with you effortless. Whether you’re launching or scaling, we
+          create a powerful online presence tailored to your coaching brand.
         </motion.p>
 
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -55,9 +58,10 @@ export default function HeroSection() {
             className="mt-2 w-fit bg-[var(--cc-primary)] hover:bg-[var(--cc-secondary)] text-white px-4 py-2 rounded-md hover:shadow-md flex items-center gap-2 text-sm sm:text-base"
           >
             <PhoneCall className="w-5 h-5" />
-            Book a Free Call
+            Book Your Free Strategy Call
           </Link>
         </motion.div>
+
       </div>
     </section>
   );

@@ -46,7 +46,7 @@ const testimonials = [
     },
 ];
 
-// CSS animation for infinite horizontal scrolling
+// CSS animation for smooth infinite horizontal scrolling
 const sliderAnimation = `
   @keyframes scrollX {
     0% { transform: translateX(0); }
@@ -58,14 +58,12 @@ export default function Testimonials() {
     return (
         <>
             <style>{sliderAnimation}</style>
-            <section className="bg-[#F4ECDE] py-16 px-4 sm:px-6 overflow-hidden">
+            <section className="bg-[#F4ECDE] py-16 px-4 sm:px-6 overflow-hidden" aria-label="Client Testimonials">
                 <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--cc-primary)] mb-10 text-center">
-                    Testimonials
+                    What Our Clients Say
                 </h2>
 
-                {/* Slider container */}
                 <div className="relative w-full overflow-hidden">
-                    {/* Animated slider track: doubled content for seamless infinite loop */}
                     <div
                         className="flex space-x-4 sm:space-x-8 whitespace-nowrap"
                         style={{
@@ -76,15 +74,15 @@ export default function Testimonials() {
                         {[...testimonials, ...testimonials].map(({ name, quote, country }, i) => (
                             <blockquote
                                 key={i}
-                                className="inline-block bg-white dark:bg-[var(--cc-primary)] rounded p-6 shadow-md max-w-xs text-left"
+                                className="inline-block bg-white rounded p-6 shadow-md max-w-xs text-left"
                                 style={{ minWidth: "300px" }}
                             >
                                 <div className="flex items-center space-x-3 mb-3">
-                                    <User className="w-6 h-6 text-primary" />
+                                    <User className="w-6 h-6 text-[var(--cc-primary)]" />
                                     <span className="text-2xl">{country}</span>
-                                    <footer className="text-secondary font-semibold">— {name}</footer>
+                                    <footer className="text-[var(--cc-secondary)] font-semibold">— {name}</footer>
                                 </div>
-                                <p className="text-dark dark:text-[var(--cc-bg)] italic whitespace-normal break-words">
+                                <p className="text-gray-900 italic whitespace-normal break-words">
                                     "{quote}"
                                 </p>
                             </blockquote>

@@ -8,34 +8,36 @@ const processItems = [
     icon: Lightbulb,
     title: "Strategy",
     description:
-      "We start by understanding your vision, audience, and goals — laying the groundwork for a smart, effective website roadmap.",
+      "We dive deep into your coaching vision, target audience, and business goals to create a strategic roadmap that ensures your website attracts and converts clients.",
   },
   {
     icon: PenTool,
     title: "Design",
     description:
-      "Our team crafts beautiful, user-focused layouts that bring your brand to life while ensuring intuitive navigation.",
+      "Our team crafts visually stunning, user-focused layouts that showcase your brand’s personality while making navigation seamless and intuitive.",
   },
   {
     icon: Rocket,
     title: "Launch",
     description:
-      "Once approved, your site goes live — fully optimized, responsive, and ready to deliver a flawless user experience.",
+      "After final approval, your site goes live fully optimized, responsive, and built to deliver a smooth, high-performing experience for your clients.",
   },
   {
     icon: LifeBuoy,
     title: "Support",
     description:
-      "After launch, we’re here with ongoing support, updates, and guidance so your site stays fresh and high-performing.",
+      "Post-launch, we provide ongoing guidance, updates, and support so your coaching website remains fresh, effective, and consistently performing at its best.",
   },
 ];
 
-function Page() {
+function Process() {
   return (
     <div className="px-4 sm:px-6 md:px-20 py-12">
+
+      {/* Process Image */}
       <motion.img
         src="/process.jpg"
-        alt="Our Process"
+        alt="CoachCraft Website Design Process"
         className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-cover rounded-md mt-6"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,6 +45,7 @@ function Page() {
         transition={{ duration: 0.7 }}
       />
 
+      {/* Section Title & Intro */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -50,13 +53,14 @@ function Page() {
         transition={{ delay: 0.2, duration: 0.6 }}
       >
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mt-10 underline text-[var(--cc-primary)]">
-          Our Process
+          Our Website Design Process
         </h1>
 
         <p className="text-sm sm:text-base md:text-lg text-center mt-4 max-w-3xl mx-auto px-2 text-gray-700">
-          At our agency, we follow a focused, collaborative process to build websites that not only look amazing — but perform powerfully.
+          At CoachCraft, we follow a clear, client-focused process to design coaching websites that not only look beautiful, but also convert visitors into paying clients.
         </p>
 
+        {/* Steps Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
           {processItems.map((item, index) => {
             const Icon = item.icon;
@@ -83,4 +87,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Process;

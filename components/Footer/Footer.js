@@ -50,6 +50,11 @@ function Footer() {
                                 </a>
                             </li>
                             <li>
+                                <a href="/blog" className="hover:underline">
+                                    Our Blog
+                                </a>
+                            </li>
+                            <li>
                                 <Link
                                     href="https://calendly.com/coachcraftmeeting/30min"
                                     className="inline-flex items-center gap-2 bg-white text-[var(--cc-primary)] px-3 py-2 rounded-md shadow-sm hover:shadow-md transition"
