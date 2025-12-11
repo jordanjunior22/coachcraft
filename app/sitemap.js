@@ -1,6 +1,5 @@
-import { NextResponse } from "next/server";
-
 const siteUrl = "https://coachcraft.space";
+
 const blogPosts = [
   "improve-coaching-website",
   "seo-strategies-for-coaches",
@@ -11,6 +10,7 @@ const blogPosts = [
   "building-trust-with-clients",
   "coaching-exercises-engagement",
 ];
+
 const staticPaths = [
   "",
   "about-us",
@@ -18,29 +18,24 @@ const staticPaths = [
   "contact",
   "appointment",
   "blog",
-  ...blogPosts,
 ];
 
-function generateSiteMap() {
-  const urls = staticPaths
-    .map(
-      (path) => `<url>
-        <loc>${siteUrl}/${path}</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-      </url>`
-    )
-    .join("");
+export default function sitemap() {
+  // Generate static pages
+  const staticPages = staticPaths.map((path) => ({
+    url: `${siteUrl}/${path}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: path === '' ? 1.0 : 0.8,
+  }));
 
-  return `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${urls}
-  </urlset>`;
-}
+  // Generate blog post pages
+  const blogPages = blogPosts.map((post) => ({
+    url: `${siteUrl}/blog/${post}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
 
-export async function GET() {
-  const sitemap = generateSiteMap();
-  return new NextResponse(sitemap, {
-    headers: { "Content-Type": "application/xml" },
-  });
+  return [...staticPages, ...blogPages];
 }
