@@ -160,11 +160,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
       <head>
-        {/* Mobile responsiveness */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" /> {/* Add your brand color */}
-        
-        {/* Preconnects (speed optimization) */}
+        <meta name="theme-color" content="#000000" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
