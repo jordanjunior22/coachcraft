@@ -1,17 +1,6 @@
-// pages/api/sitemap.js
-const siteUrl = "https://coachcraft.space";
+import { NextResponse } from "next/server";
 
-// All static pages + blog posts
-const blogPosts = [
-  "improve-coaching-website",
-  "seo-strategies-for-coaches",
-  "effective-coaching-sessions",
-  "attract-ideal-clients",
-  "personal-development-for-coaches",
-  "time-management-for-coaches",
-  "building-trust-with-clients",
-  "coaching-exercises-engagement",
-];
+const siteUrl = "https://coachcraft.space";
 
 const staticPaths = [
   "",
@@ -20,32 +9,36 @@ const staticPaths = [
   "contact",
   "appointment",
   "blog",
-  ...blogPosts,
+  "improve-coaching-website",
+  "seo-strategies-for-coaches",
+  // Add more blog post slugs here
 ];
 
 function generateSiteMap() {
   const urls = staticPaths
     .map((path) => {
       return `
-    <url>
-      <loc>${siteUrl}/${path}</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.8</priority>
-    </url>
-  `;
+      <url>
+        <loc>${siteUrl}/${path}</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    `;
     })
     .join("");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${urls}
-  </urlset>
-  `;
+  </urlset>`;
 }
 
-export default function handler(req, res) {
+export async function GET() {
   const sitemap = generateSiteMap();
-  res.setHeader("Content-Type", "application/xml");
-  res.write(sitemap);
-  res.end();
+
+  return new NextResponse(sitemap, {
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
 }
